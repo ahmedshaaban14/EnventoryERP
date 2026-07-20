@@ -1,0 +1,15 @@
+C:\Users\HH\Desktop\New folder\InventoryERP\InventoryERP.Application\obj\Debug\net8.0\InventoryERP.Application.csproj.AssemblyReference.cache
+C:\Users\HH\Desktop\New folder\InventoryERP\InventoryERP.Application\obj\Debug\net8.0\InventoryERP.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HH\Desktop\New folder\InventoryERP\InventoryERP.Application\bin\Debug\net8.0\InventoryERP.Application.deps.json
+C:\Users\HH\Desktop\New folder\InventoryERP\InventoryERP.Application\bin\Debug\net8.0\InventoryERP.Application.dll
+C:\Users\HH\Desktop\New folder\InventoryERP\InventoryERP.Application\bin\Debug\net8.0\InventoryERP.Application.pdb
+C:\Users\HH\Desktop\New folder\InventoryERP\InventoryERP.Application\bin\Debug\net8.0\InventoryERP.Domain.dll
+C:\Users\HH\Desktop\New folder\InventoryERP\InventoryERP.Application\bin\Debug\net8.0\InventoryERP.Domain.pdb
+C:\Users\HH\Desktop\New folder\InventoryERP\InventoryERP.Application\obj\Debug\net8.0\InventoryERP.Application.AssemblyInfoInputs.cache
+C:\Users\HH\Desktop\New folder\InventoryERP\InventoryERP.Application\obj\Debug\net8.0\InventoryERP.Application.AssemblyInfo.cs
+C:\Users\HH\Desktop\New folder\InventoryERP\InventoryERP.Application\obj\Debug\net8.0\InventoryERP.Application.csproj.CoreCompileInputs.cache
+C:\Users\HH\Desktop\New folder\InventoryERP\InventoryERP.Application\obj\Debug\net8.0\InventoryERP.Application.csproj.CopyComplete
+C:\Users\HH\Desktop\New folder\InventoryERP\InventoryERP.Application\obj\Debug\net8.0\InventoryERP.Application.dll
+C:\Users\HH\Desktop\New folder\InventoryERP\InventoryERP.Application\obj\Debug\net8.0\refint\InventoryERP.Application.dll
+C:\Users\HH\Desktop\New folder\InventoryERP\InventoryERP.Application\obj\Debug\net8.0\InventoryERP.Application.pdb
+C:\Users\HH\Desktop\New folder\InventoryERP\InventoryERP.Application\obj\Debug\net8.0\ref\InventoryERP.Application.dll

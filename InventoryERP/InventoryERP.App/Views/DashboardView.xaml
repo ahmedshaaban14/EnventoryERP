@@ -1,0 +1,233 @@
+<UserControl x:Class="InventoryERP.App.Views.DashboardView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:InventoryERP.App"
+             FlowDirection="RightToLeft">
+    <UserControl.Resources>
+        <SolidColorBrush x:Key="SurfaceBrush" Color="#FFFFFF" />
+        <SolidColorBrush x:Key="BorderBrushSoft" Color="#E2E8F0" />
+        <SolidColorBrush x:Key="MutedBrush" Color="#64748B" />
+        <SolidColorBrush x:Key="PrimaryBrush" Color="#1D4ED8" />
+    </UserControl.Resources>
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid Margin="8">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Border Background="{StaticResource SurfaceBrush}" CornerRadius="22" Padding="20" BorderBrush="{StaticResource BorderBrushSoft}" BorderThickness="1" Margin="0,0,0,16">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel>
+                        <TextBlock Text="{Binding CompanyName}" FontSize="28" FontWeight="Bold" />
+                        <TextBlock Text="{Binding CurrentUser, StringFormat=مرحباً {0}}" Foreground="{StaticResource MutedBrush}" Margin="0,6,0,0" />
+                        <TextBlock Text="{Binding CurrentDateTime, StringFormat={}{0:dddd, dd MMMM yyyy - HH:mm}}" Foreground="{StaticResource MutedBrush}" />
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+                        <Button Content="صنف جديد" Command="{Binding NavigateCommand}" CommandParameter="{x:Static local:AppPage.Items}" Margin="0,0,8,0" />
+                        <Button Content="فاتورة شراء" Command="{Binding NavigateCommand}" CommandParameter="{x:Static local:AppPage.PurchaseInvoices}" Margin="0,0,8,0" Background="#0F172A" />
+                        <Button Content="فاتورة بيع" Command="{Binding NavigateCommand}" CommandParameter="{x:Static local:AppPage.SalesInvoices}" Background="#0F172A" />
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <UniformGrid Grid.Row="1" Columns="5" Margin="0,0,0,16">
+                <Border Background="{StaticResource SurfaceBrush}" CornerRadius="18" Padding="16" Margin="0,0,12,12" BorderBrush="{StaticResource BorderBrushSoft}" BorderThickness="1">
+                    <StackPanel>
+                        <TextBlock Text="إجمالي الأصناف" Foreground="{StaticResource MutedBrush}" />
+                        <TextBlock Text="{Binding Dashboard.TotalItems}" FontSize="26" FontWeight="Bold" />
+                    </StackPanel>
+                </Border>
+                <Border Background="{StaticResource SurfaceBrush}" CornerRadius="18" Padding="16" Margin="0,0,12,12" BorderBrush="{StaticResource BorderBrushSoft}" BorderThickness="1">
+                    <StackPanel>
+                        <TextBlock Text="العملاء" Foreground="{StaticResource MutedBrush}" />
+                        <TextBlock Text="{Binding Dashboard.TotalCustomers}" FontSize="26" FontWeight="Bold" />
+                    </StackPanel>
+                </Border>
+                <Border Background="{StaticResource SurfaceBrush}" CornerRadius="18" Padding="16" Margin="0,0,12,12" BorderBrush="{StaticResource BorderBrushSoft}" BorderThickness="1">
+                    <StackPanel>
+                        <TextBlock Text="الموردون" Foreground="{StaticResource MutedBrush}" />
+                        <TextBlock Text="{Binding Dashboard.TotalSuppliers}" FontSize="26" FontWeight="Bold" />
+                    </StackPanel>
+                </Border>
+                <Border Background="{StaticResource SurfaceBrush}" CornerRadius="18" Padding="16" Margin="0,0,12,12" BorderBrush="{StaticResource BorderBrushSoft}" BorderThickness="1">
+                    <StackPanel>
+                        <TextBlock Text="قيمة المخزون" Foreground="{StaticResource MutedBrush}" />
+                        <TextBlock Text="{Binding Dashboard.InventoryValue}" FontSize="26" FontWeight="Bold" />
+                    </StackPanel>
+                </Border>
+                <Border Background="{StaticResource SurfaceBrush}" CornerRadius="18" Padding="16" Margin="0,0,0,12" BorderBrush="{StaticResource BorderBrushSoft}" BorderThickness="1">
+                    <StackPanel>
+                        <TextBlock Text="صافي الربح" Foreground="{StaticResource MutedBrush}" />
+                        <TextBlock Text="{Binding Dashboard.NetProfit}" FontSize="26" FontWeight="Bold" />
+                    </StackPanel>
+                </Border>
+            </UniformGrid>
+
+            <UniformGrid Grid.Row="2" Columns="5" Margin="0,0,0,16">
+                <Border Background="{StaticResource SurfaceBrush}" CornerRadius="18" Padding="16" Margin="0,0,12,12" BorderBrush="{StaticResource BorderBrushSoft}" BorderThickness="1">
+                    <StackPanel><TextBlock Text="مبيعات اليوم" Foreground="{StaticResource MutedBrush}" /><TextBlock Text="{Binding Dashboard.TodaysSales}" FontSize="22" FontWeight="Bold" /></StackPanel>
+                </Border>
+                <Border Background="{StaticResource SurfaceBrush}" CornerRadius="18" Padding="16" Margin="0,0,12,12" BorderBrush="{StaticResource BorderBrushSoft}" BorderThickness="1">
+                    <StackPanel><TextBlock Text="مبيعات الشهر" Foreground="{StaticResource MutedBrush}" /><TextBlock Text="{Binding Dashboard.MonthlySales}" FontSize="22" FontWeight="Bold" /></StackPanel>
+                </Border>
+                <Border Background="{StaticResource SurfaceBrush}" CornerRadius="18" Padding="16" Margin="0,0,12,12" BorderBrush="{StaticResource BorderBrushSoft}" BorderThickness="1">
+                    <StackPanel><TextBlock Text="مشتريات اليوم" Foreground="{StaticResource MutedBrush}" /><TextBlock Text="{Binding Dashboard.TodaysPurchases}" FontSize="22" FontWeight="Bold" /></StackPanel>
+                </Border>
+                <Border Background="{StaticResource SurfaceBrush}" CornerRadius="18" Padding="16" Margin="0,0,12,12" BorderBrush="{StaticResource BorderBrushSoft}" BorderThickness="1">
+                    <StackPanel><TextBlock Text="مشتريات الشهر" Foreground="{StaticResource MutedBrush}" /><TextBlock Text="{Binding Dashboard.MonthlyPurchases}" FontSize="22" FontWeight="Bold" /></StackPanel>
+                </Border>
+                <Border Background="{StaticResource SurfaceBrush}" CornerRadius="18" Padding="16" Margin="0,0,0,12" BorderBrush="{StaticResource BorderBrushSoft}" BorderThickness="1">
+                    <StackPanel><TextBlock Text="رصيد الخزنة" Foreground="{StaticResource MutedBrush}" /><TextBlock Text="{Binding Dashboard.CashBalance}" FontSize="22" FontWeight="Bold" /></StackPanel>
+                </Border>
+            </UniformGrid>
+
+            <Grid Grid.Row="3" Margin="0,0,0,16">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1.2*" />
+                    <ColumnDefinition Width="0.8*" />
+                </Grid.ColumnDefinitions>
+                <Border Background="{StaticResource SurfaceBrush}" CornerRadius="18" Padding="16" Margin="0,0,12,0" BorderBrush="{StaticResource BorderBrushSoft}" BorderThickness="1">
+                    <StackPanel>
+                        <TextBlock Text="العناصر منخفضة المخزون" FontSize="18" FontWeight="Bold" Margin="0,0,0,12" />
+                        <ListBox ItemsSource="{Binding Dashboard.LowStockItems}" DisplayMemberPath="Name" BorderThickness="0" Height="220" />
+                    </StackPanel>
+                </Border>
+                <Border Grid.Column="1" Background="{StaticResource SurfaceBrush}" CornerRadius="18" Padding="16" BorderBrush="{StaticResource BorderBrushSoft}" BorderThickness="1">
+                    <StackPanel>
+                        <TextBlock Text="آخر الأنشطة" FontSize="18" FontWeight="Bold" Margin="0,0,0,12" />
+                        <ItemsControl ItemsSource="{Binding Dashboard.RecentActivities}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding}" TextWrapping="Wrap" Margin="0,0,0,8" Foreground="{StaticResource MutedBrush}" />
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </StackPanel>
+                </Border>
+            </Grid>
+
+            <Grid Grid.Row="4" Margin="0,0,0,16">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <Border Background="{StaticResource SurfaceBrush}" CornerRadius="18" Padding="16" Margin="0,0,12,0" BorderBrush="{StaticResource BorderBrushSoft}" BorderThickness="1">
+                    <StackPanel>
+                        <TextBlock Text="مبيعات الشهر" FontSize="18" FontWeight="Bold" Margin="0,0,0,12" />
+                        <ItemsControl ItemsSource="{Binding Dashboard.MonthlySalesSeries}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid Margin="0,0,0,8">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="40" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Text="{Binding Label}" Foreground="{StaticResource MutedBrush}" />
+                                        <ProgressBar Grid.Column="1" Height="10" Minimum="0" Maximum="100" Value="{Binding Value}" />
+                                    </Grid>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Column="1" Background="{StaticResource SurfaceBrush}" CornerRadius="18" Padding="16" Margin="0,0,12,0" BorderBrush="{StaticResource BorderBrushSoft}" BorderThickness="1">
+                    <StackPanel>
+                        <TextBlock Text="مشتريات الشهر" FontSize="18" FontWeight="Bold" Margin="0,0,0,12" />
+                        <ItemsControl ItemsSource="{Binding Dashboard.MonthlyPurchasesSeries}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid Margin="0,0,0,8">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="40" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Text="{Binding Label}" Foreground="{StaticResource MutedBrush}" />
+                                        <ProgressBar Grid.Column="1" Height="10" Minimum="0" Maximum="100" Value="{Binding Value}" />
+                                    </Grid>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Column="2" Background="{StaticResource SurfaceBrush}" CornerRadius="18" Padding="16" BorderBrush="{StaticResource BorderBrushSoft}" BorderThickness="1">
+                    <StackPanel>
+                        <TextBlock Text="توزيع المخزون" FontSize="18" FontWeight="Bold" Margin="0,0,0,12" />
+                        <ItemsControl ItemsSource="{Binding Dashboard.InventoryDistribution}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid Margin="0,0,0,8">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="80" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Text="{Binding Label}" Foreground="{StaticResource MutedBrush}" />
+                                        <ProgressBar Grid.Column="1" Height="10" Minimum="0" Maximum="100" Value="{Binding Value}" />
+                                    </Grid>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </StackPanel>
+                </Border>
+            </Grid>
+
+            <Grid Grid.Row="5" Margin="0,0,0,16">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <Border Background="{StaticResource SurfaceBrush}" CornerRadius="18" Padding="16" Margin="0,0,12,0" BorderBrush="{StaticResource BorderBrushSoft}" BorderThickness="1">
+                    <StackPanel>
+                        <TextBlock Text="آخر المبيعات" FontSize="18" FontWeight="Bold" Margin="0,0,0,12" />
+                        <ListBox ItemsSource="{Binding Dashboard.RecentSales}" BorderThickness="0">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Margin="0,0,0,8">
+                                        <TextBlock Text="{Binding Number}" FontWeight="SemiBold" />
+                                        <TextBlock Text="{Binding InvoiceDate}" Foreground="{StaticResource MutedBrush}" FontSize="11" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Column="1" Background="{StaticResource SurfaceBrush}" CornerRadius="18" Padding="16" BorderBrush="{StaticResource BorderBrushSoft}" BorderThickness="1">
+                    <StackPanel>
+                        <TextBlock Text="آخر المشتريات" FontSize="18" FontWeight="Bold" Margin="0,0,0,12" />
+                        <ListBox ItemsSource="{Binding Dashboard.RecentPurchases}" BorderThickness="0">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Margin="0,0,0,8">
+                                        <TextBlock Text="{Binding Number}" FontWeight="SemiBold" />
+                                        <TextBlock Text="{Binding InvoiceDate}" Foreground="{StaticResource MutedBrush}" FontSize="11" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </StackPanel>
+                </Border>
+            </Grid>
+
+            <Border Grid.Row="6" Background="{StaticResource SurfaceBrush}" CornerRadius="18" Padding="16" BorderBrush="{StaticResource BorderBrushSoft}" BorderThickness="1">
+                <WrapPanel>
+                    <Button Content="أصناف جديدة" Command="{Binding NavigateCommand}" CommandParameter="{x:Static local:AppPage.Items}" Margin="0,0,8,8" />
+                    <Button Content="فاتورة شراء" Command="{Binding NavigateCommand}" CommandParameter="{x:Static local:AppPage.PurchaseInvoices}" Margin="0,0,8,8" />
+                    <Button Content="فاتورة بيع" Command="{Binding NavigateCommand}" CommandParameter="{x:Static local:AppPage.SalesInvoices}" Margin="0,0,8,8" />
+                    <Button Content="إضافة عميل" Command="{Binding NavigateCommand}" CommandParameter="{x:Static local:AppPage.Customers}" Margin="0,0,8,8" />
+                    <Button Content="إضافة مورد" Command="{Binding NavigateCommand}" CommandParameter="{x:Static local:AppPage.Suppliers}" Margin="0,0,8,8" />
+                </WrapPanel>
+            </Border>
+        </Grid>
+    </ScrollViewer>
+</UserControl>

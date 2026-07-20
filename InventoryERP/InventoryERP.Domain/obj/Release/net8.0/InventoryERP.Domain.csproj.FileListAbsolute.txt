@@ -1,0 +1,11 @@
+C:\Users\HH\Desktop\New folder\InventoryERP\InventoryERP.Domain\bin\Release\net8.0\InventoryERP.Domain.deps.json
+C:\Users\HH\Desktop\New folder\InventoryERP\InventoryERP.Domain\bin\Release\net8.0\InventoryERP.Domain.dll
+C:\Users\HH\Desktop\New folder\InventoryERP\InventoryERP.Domain\bin\Release\net8.0\InventoryERP.Domain.pdb
+C:\Users\HH\Desktop\New folder\InventoryERP\InventoryERP.Domain\obj\Release\net8.0\InventoryERP.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HH\Desktop\New folder\InventoryERP\InventoryERP.Domain\obj\Release\net8.0\InventoryERP.Domain.AssemblyInfoInputs.cache
+C:\Users\HH\Desktop\New folder\InventoryERP\InventoryERP.Domain\obj\Release\net8.0\InventoryERP.Domain.AssemblyInfo.cs
+C:\Users\HH\Desktop\New folder\InventoryERP\InventoryERP.Domain\obj\Release\net8.0\InventoryERP.Domain.csproj.CoreCompileInputs.cache
+C:\Users\HH\Desktop\New folder\InventoryERP\InventoryERP.Domain\obj\Release\net8.0\InventoryERP.Domain.dll
+C:\Users\HH\Desktop\New folder\InventoryERP\InventoryERP.Domain\obj\Release\net8.0\refint\InventoryERP.Domain.dll
+C:\Users\HH\Desktop\New folder\InventoryERP\InventoryERP.Domain\obj\Release\net8.0\InventoryERP.Domain.pdb
+C:\Users\HH\Desktop\New folder\InventoryERP\InventoryERP.Domain\obj\Release\net8.0\ref\InventoryERP.Domain.dll

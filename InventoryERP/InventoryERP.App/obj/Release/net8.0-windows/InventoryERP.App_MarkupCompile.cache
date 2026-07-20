@@ -1,0 +1,20 @@
+﻿InventoryERP.App
+
+
+winexe
+C#
+.cs
+C:\Users\HH\Desktop\New folder\InventoryERP\InventoryERP.App\obj\Release\net8.0-windows\
+InventoryERP.App
+none
+false
+TRACE;RELEASE;NET;NET8_0;NETCOREAPP
+C:\Users\HH\Desktop\New folder\InventoryERP\InventoryERP.App\App.xaml
+9-1813898073
+
+202015079797
+239-1868645305
+MainWindow.xaml;Views\ActionWindow.xaml;Views\CashView.xaml;Views\CustomersView.xaml;Views\InvoicesView.xaml;Views\ItemsView.xaml;Views\ModulesPanel.xaml;Views\ReportsView.xaml;Views\SuppliersView.xaml;
+
+False
+
